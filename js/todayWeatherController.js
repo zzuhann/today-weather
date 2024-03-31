@@ -35,6 +35,7 @@ function fetchWeatherDataByCountryAndCity(city, country) {
     beforeSend: () => {
       loadingElement.style.display = "block";
       errorElement.style.display = "none";
+      document.getElementById("weather-content").innerHTML = "";
     },
   })
     .done(function (json) {
@@ -58,6 +59,7 @@ function fetchWeatherDataByCountryAndCity(city, country) {
       }
     })
     .fail(() => {
+      document.getElementById("weather-content").innerHTML = "";
       loadingElement.style.display = "none";
       const errorElement = document.getElementById("error");
       errorElement.style.display = "flex";
