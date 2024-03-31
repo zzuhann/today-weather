@@ -19,10 +19,13 @@
   align-items: center;
 }
 
+.weather-content {
+  margin-top: 24px;
+}
+
 .main-container {
   display: flex;
   gap: 24px;
-  margin-top: 24px;
 }
 
 .icon {
@@ -56,4 +59,22 @@
   font-size: 16px;
   color: #3d3d3d;
   margin-top: 8px;
+}
+
+.loading {
+  display: none;
+}
+
+.error-container {
+  padding: 4px;
+  display: none;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+  border: 1px solid red;
+  background-color: rgb(255, 234, 234);
+}
+
+.error-text {
+  font-size: 14px;
 }

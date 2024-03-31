@@ -1,6 +1,10 @@
 <div class="today-weather-container">
     <h1 class="title">Today's Weather</p>
 </div>
+<div class="error-container" id="error">
+    <i class="fa-regular fa-circle-xmark" style="color: #ff3d3d;"></i>
+    <p class="error-text">Not found city</p>
+</div>
 <div class="search-container">
     <div class="form-container">
         <label for="city">City: </label>
@@ -12,6 +16,6 @@
     </div>
     <button id="search-button">Search</button>
 </div>
-<div id="weather-content">
-
+<div class="weather-content" id="weather-content">
+    <lottie-player id="loading" class="loading" src="https://lottie.host/30e32725-c06e-4786-8da7-6b348e8d934e/NdreKvQIvS.json" background="##FFFFFF" speed="1" style="width: 70px; height: 70px" loop autoplay direction="1" mode="normal"></lottie-player>
 </div>

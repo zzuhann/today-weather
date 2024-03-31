@@ -21,6 +21,8 @@ todayWeatherMenuItem.addEventListener("click", function () {
 });
 
 function fetchWeatherDataByCountryAndCity(city, country) {
+  const loadingElement = document.getElementById("loading");
+  const errorElement = document.getElementById("error");
   $.ajax({
     url: "https://api.openweathermap.org/data/2.5/weather",
     data: {
@@ -30,12 +32,18 @@ function fetchWeatherDataByCountryAndCity(city, country) {
     },
     type: "GET",
     dataType: "json",
-  }).done(function (json) {
-    if (json) {
-      const { main, description } = json.weather[0];
-      const { humidity, temp_min, temp_max } = json.main;
-      const iconCssName = getIconCssName(main);
-      const innerHTML = `
+    beforeSend: () => {
+      loadingElement.style.display = "block";
+      errorElement.style.display = "none";
+    },
+  })
+    .done(function (json) {
+      loadingElement.style.display = "none";
+      if (json) {
+        const { main, description } = json.weather[0];
+        const { humidity, temp_min, temp_max } = json.main;
+        const iconCssName = getIconCssName(main);
+        const innerHTML = `
         <div class='main-container'>
             <div class='icon ${iconCssName}'></div>
             <div>
@@ -46,9 +54,14 @@ function fetchWeatherDataByCountryAndCity(city, country) {
         <p>Temperature: ${temp_min}˚C ~ ${temp_max}˚C</p>
         <p>Humidity: ${humidity}%</p>
         `;
-      document.getElementById("weather-content").innerHTML = innerHTML;
-    }
-  });
+        document.getElementById("weather-content").innerHTML = innerHTML;
+      }
+    })
+    .fail(() => {
+      loadingElement.style.display = "none";
+      const errorElement = document.getElementById("error");
+      errorElement.style.display = "flex";
+    });
 }
 
 function getIconCssName(main) {
