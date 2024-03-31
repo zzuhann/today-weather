@@ -3,9 +3,11 @@
 <head>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/dataAnalysisStyle.css">
-	<script src="js/script.js" defer></script>
+	<link rel="stylesheet" href="css/todayWeatherStyle.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script src="js/dataAnalysisController.js" defer></script>
+	<script src="js/todayWeatherController.js" defer></script>
 
 </head>
 <body>
@@ -20,13 +22,8 @@
 
 		</div>
 	</div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script>
-$(function(){
-	$.get( 'http://api.openweathermap.org/data/2.5/weather?q=Taipei,TW', function(resp){
-		alert( JSON.stringify(resp) );
-	});
-});
+
 </script>
 </body>
 </html>

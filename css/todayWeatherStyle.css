@@ -1,9 +1,59 @@
 .title {
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 4px;
 }
 
 .today-weather-container {
   border-bottom: 1px solid #000;
+}
+
+.search-container {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.form-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.icon {
+  width: 70px;
+  height: 75px;
+  background-image: url("../img/icons.png");
+}
+
+.cloud {
+  background-position: -70px 225px;
+}
+
+.rain {
+  background-position: -360px -150px;
+}
+
+.clear {
+  background-position: -70px 0;
+}
+
+.other {
+  background-position: -140px 75px;
+}
+
+.weather-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.weather-description {
+  font-size: 16px;
+  color: #3d3d3d;
+  margin-top: 8px;
 }
