@@ -2,12 +2,13 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/main.css">
+	<script src="js/script.js" defer></script>
 </head>
 <body>
 <div>
 	<ul class="left-side-menu">
-		<li>Data Analysis</li>
-		<li>Today's Weather</li>
+		<li id="data-analysis">Data Analysis</li>
+		<li id="today-weather">Today's Weather</li>
 	</ul>
 </div>
 <div id="content">
@@ -19,9 +20,8 @@ $(function(){
 	$.get( 'http://api.openweathermap.org/data/2.5/weather?q=Taipei,TW', function(resp){
 		alert( JSON.stringify(resp) );
 	});
-
-	
 });
+
 </script>
 </body>
 </html>
